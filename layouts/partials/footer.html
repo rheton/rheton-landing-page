@@ -1,0 +1,10 @@
+{{ $footer := .Params.footer }}
+<footer class="rh-footer">
+  <div class="rh-footer-inner">
+    {{ partial "logo.html" (dict "size" 18) }}
+    <nav class="rh-footer-nav">
+      {{ range $footer.links }}<a href="{{ .href }}">{{ .label }}</a>{{ end }}
+    </nav>
+    <div class="rh-footer-copy">{{ $footer.copyright }}</div>
+  </div>
+</footer>

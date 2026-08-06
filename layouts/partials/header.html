@@ -1,0 +1,28 @@
+{{ $nav := .Params.nav }}
+{{ $pricingEnabled := .Params.pricing.enabled }}
+{{ $navLinks := slice }}
+{{ range $nav.links }}
+  {{ if or (ne .href "#pricing") $pricingEnabled }}
+    {{ $navLinks = $navLinks | append . }}
+  {{ end }}
+{{ end }}
+<header class="rh-header">
+  <div class="rh-header-inner">
+    {{ partial "logo.html" (dict "size" 22) }}
+    <nav class="rh-nav">
+      <div class="rh-nav-links" id="navLinks">
+        {{ range $navLinks }}<a href="{{ .href }}">{{ .label }}</a>{{ end }}
+      </div>
+      <button type="button" class="rh-nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#17181c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <div class="rh-mobile-nav" id="mobileNavPanel">
+        {{ range $navLinks }}<a href="{{ .href }}">{{ .label }}</a>{{ end }}
+      </div>
+      <div class="rh-header-cta">
+        <a href="#" class="rh-btn rh-btn-outline">{{ $nav.sign_in_label }}</a>
+        <button type="button" class="rh-btn rh-btn-solid">{{ $nav.cta_label }}</button>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,36 @@
+{{ $pricing := .Params.pricing }}
+{{ if $pricing.enabled }}
+<section id="pricing" class="rh-pricing" data-annual-discount="{{ $pricing.annual_discount }}">
+  <div class="rh-container">
+    <div class="rh-center-col">
+      <h2 class="rh-h2">{{ $pricing.heading }}</h2>
+      <div class="rh-tabs" id="billingTabs">
+        <button type="button" class="rh-tab is-active" data-billing="monthly">{{ $pricing.monthly_label }}</button>
+        <button type="button" class="rh-tab" data-billing="annual">{{ $pricing.annual_label }}</button>
+      </div>
+    </div>
+
+    <div class="rh-pricing-grid" id="pricingGrid">
+      {{ range $pricing.plans }}
+      <div class="rh-plan{{ if .featured }} is-featured{{ end }}">
+        <div class="rh-plan-head">
+          <div class="rh-plan-name">{{ .name }}</div>
+          {{ if .badge }}<span class="rh-plan-badge">{{ .badge }}</span>{{ end }}
+        </div>
+        <div class="rh-plan-price">
+          <span class="rh-plan-amount"{{ if .featured }} id="proAmount" data-base-price="{{ .base_price }}"{{ end }}>{{ .price }}</span>
+          {{ if .unit }}<span class="rh-plan-unit"{{ if .featured }} id="proUnit" data-monthly-unit="{{ .unit }}" data-annual-unit="{{ .annual_unit }}"{{ end }}>{{ .unit }}</span>{{ end }}
+        </div>
+        <p class="rh-plan-blurb">{{ .blurb }}</p>
+        <div class="rh-plan-items">
+          {{ range .items }}<div class="rh-plan-item">{{ . }}</div>{{ end }}
+        </div>
+        <div class="rh-plan-footer">
+          <button type="button" class="rh-btn {{ if .featured }}rh-btn-solid{{ else }}rh-btn-outline{{ end }} rh-btn-block">{{ .cta }}</button>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

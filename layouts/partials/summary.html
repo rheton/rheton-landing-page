@@ -1,0 +1,7 @@
+{{ $summary := .Params.session_summary }}
+<section id="summary" class="rh-summary">
+  <div class="rh-container rh-narrow rh-center-col">
+    <h2 class="rh-h2">{{ $summary.heading }}</h2>
+    <p class="rh-summary-body">{{ $summary.body }} <b>{{ $summary.closing }}</b></p>
+  </div>
+</section>

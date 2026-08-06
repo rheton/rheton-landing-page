@@ -1,0 +1,3 @@
+baseURL = '/'
+locale = 'en-us'
+title = "Rheton — Practice the engineering interview you're actually going to have"

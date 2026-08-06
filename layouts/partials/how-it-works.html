@@ -1,0 +1,152 @@
+{{ $how := .Params.how_it_works }}
+{{ $stage1 := index $how.stages 0 }}
+{{ $stage2 := index $how.stages 1 }}
+{{ $stage3 := index $how.stages 2 }}
+<section id="how" class="rh-how">
+  <div class="rh-container">
+    <h2 class="rh-h2 rh-center">{{ $how.heading }}</h2>
+
+    <div class="rh-how-grid" id="howGrid">
+
+      <div class="rh-how-col" data-stage="1">
+        <p class="rh-how-caption"><span class="rh-bold">{{ $stage1.lead }}</span> {{ $stage1.body }}</p>
+        <div class="rh-how-panel rh-panel-setup">
+          <div class="rh-setup-field">
+            <div class="rh-setup-label">Resume</div>
+            <div class="rh-setup-row">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rh-setup-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
+              <span class="rh-setup-filename">resume.pdf</span>
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rh-setup-check"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
+          </div>
+
+          <div class="rh-setup-field">
+            <div class="rh-setup-label">Length</div>
+            <div class="rh-segmented">
+              <span>15</span><span>30</span><span>45</span><span class="is-active">60 min</span>
+            </div>
+          </div>
+
+          <div class="rh-setup-field">
+            <div class="rh-setup-label">Language</div>
+            <div class="rh-setup-select">Haskell<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></div>
+          </div>
+
+          <div class="rh-setup-field rh-setup-stages">
+            <div class="rh-setup-label">Stages</div>
+            <div class="rh-stage-row rh-stage-static"><span class="rh-stage-num">0</span>Introduction</div>
+            <div class="rh-stage-expand" data-reveal="stage2">
+              <div class="rh-stage-row"><span class="rh-stage-num">1</span>Coding exercise</div>
+              <div class="rh-segmented rh-segmented-sm">
+                <span class="is-active">Easy</span><span>Medium</span><span>Hard</span>
+              </div>
+              <div class="rh-tag-row">
+                <span class="rh-tag">Arrays</span><span class="rh-tag">Trees</span><span class="rh-tag">Hashing</span>
+              </div>
+            </div>
+            <div class="rh-stage-expand" data-reveal="stage3">
+              <div class="rh-stage-row"><span class="rh-stage-num">2</span>Behavioral questions</div>
+              <div class="rh-tag-row">
+                <span class="rh-tag">Conflict</span><span class="rh-tag">Ownership</span>
+              </div>
+            </div>
+            <div class="rh-add-stage" data-flash="adding">+ Add stage</div>
+          </div>
+        </div>
+        <button type="button" class="rh-replay" data-replay="1"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.2-5.9"></path><path d="M21 3v5h-5"></path></svg>{{ $how.replay_label }}</button>
+      </div>
+
+      <div class="rh-how-arrow" id="howArrow1" data-arrow="1">
+        <svg viewBox="0 0 44 40" width="40" height="36" fill="currentColor" aria-hidden="true"><path d="M0 13h24V2l18 18-18 18V27H0z"></path></svg>
+      </div>
+
+      <div class="rh-how-col" data-stage="2">
+        <p class="rh-how-caption"><span class="rh-bold">{{ $stage2.lead }}</span> {{ $stage2.body }}</p>
+        <div class="rh-how-panel rh-panel-code">
+          <div class="rh-code-window">
+            <div class="rh-code-titlebar">solution.hs</div>
+            <div class="rh-code-body">
+              <pre class="rh-code-gutter">1
+2
+3
+4
+5
+6
+7
+8</pre><pre class="rh-code-text" id="codeDisplay"><span id="codeChars"></span><span class="rh-cursor" id="codeCursor"></span></pre>
+            </div>
+          </div>
+          <div class="rh-console">
+            <div class="rh-console-head">
+              <span>Console</span>
+              <span class="rh-run-pill" id="runPill"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l14 9-14 9V3z"></path></svg>Run</span>
+            </div>
+            <div class="rh-console-out" id="consoleOut"></div>
+          </div>
+          <div class="rh-chat">
+            <div class="rh-chat-bubble" data-reveal="bug1"><span class="rh-chat-dot"></span><p>There's a bug in your pivot comparison on line 5.</p></div>
+            <div class="rh-chat-bubble" data-reveal="bug2"><span class="rh-chat-dot"></span><p>The algorithm is correct.</p></div>
+            <div class="rh-chat-bubble" data-reveal="bug3"><span class="rh-chat-dot"></span><p>What's the time complexity if the array is already sorted?</p></div>
+          </div>
+        </div>
+        <button type="button" class="rh-replay" data-replay="2"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.2-5.9"></path><path d="M21 3v5h-5"></path></svg>{{ $how.replay_label }}</button>
+      </div>
+
+      <div class="rh-how-arrow" id="howArrow2" data-arrow="2">
+        <svg viewBox="0 0 44 40" width="40" height="36" fill="currentColor" aria-hidden="true"><path d="M0 13h24V2l18 18-18 18V27H0z"></path></svg>
+      </div>
+
+      <div class="rh-how-col" data-stage="3">
+        <p class="rh-how-caption"><span class="rh-bold">{{ $stage3.lead }}</span> {{ $stage3.body }}</p>
+        <div class="rh-how-panel rh-panel-summary">
+          <div class="rh-sum-head" data-reveal="sum1">
+            <span class="rh-sum-check"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span class="rh-sum-title">Interview completed</span>
+          </div>
+          <div class="rh-sum-items">
+            <div class="rh-sum-item" data-reveal="sum2">
+              <div class="rh-sum-item-label">Intro</div>
+              <div class="rh-sum-item-body">Clear on the round and the role; got straight to the problem.</div>
+            </div>
+            <div class="rh-sum-item" data-reveal="sum3">
+              <div class="rh-sum-item-label">Coding exercise</div>
+              <div class="rh-sum-item-body">Framed it well, caught the edge case; one unchecked complexity claim.</div>
+            </div>
+            <div class="rh-sum-item" data-reveal="sum4">
+              <div class="rh-sum-item-label">Behavioral questions</div>
+              <div class="rh-sum-item-body">Strong ownership example; light on how the conflict actually resolved.</div>
+            </div>
+          </div>
+          <div class="rh-sum-radar-wrap" data-reveal="sum5">
+            <svg viewBox="-50 -8 265 145" width="290" height="160">
+              <polygon points="70,15 122.3,53 102.3,114.5 37.7,114.5 17.7,53" fill="none" stroke="var(--color-border)" stroke-width="1"></polygon>
+              <polygon points="70,28.75 109.2,57.25 94.25,103.37 45.75,103.37 30.8,57.25" fill="none" stroke="var(--color-border)" stroke-width="1"></polygon>
+              <polygon points="70,42.5 96.15,61.5 86.17,92.25 53.83,92.25 43.85,61.5" fill="none" stroke="var(--color-border)" stroke-width="1"></polygon>
+              <polygon points="70,56.25 83.08,65.75 78.08,81.12 61.92,81.12 56.92,65.75" fill="none" stroke="var(--color-border)" stroke-width="1"></polygon>
+              <line x1="70" y1="70" x2="70" y2="15" stroke="var(--color-border)" stroke-width="1"></line>
+              <line x1="70" y1="70" x2="122.3" y2="53" stroke="var(--color-border)" stroke-width="1"></line>
+              <line x1="70" y1="70" x2="102.3" y2="114.5" stroke="var(--color-border)" stroke-width="1"></line>
+              <line x1="70" y1="70" x2="37.7" y2="114.5" stroke="var(--color-border)" stroke-width="1"></line>
+              <line x1="70" y1="70" x2="17.7" y2="53" stroke="var(--color-border)" stroke-width="1"></line>
+              <g class="rh-radar-fill" id="radarFill">
+                <polygon points="70,24.9 114.45,55.55 94.25,103.37 50.6,96.7 32.3,57.8" fill="#3d4a8f" fill-opacity="0.22" stroke="#3d4a8f" stroke-width="1.5"></polygon>
+                <circle cx="70" cy="24.9" r="2.5" fill="#3d4a8f"></circle>
+                <circle cx="114.45" cy="55.55" r="2.5" fill="#3d4a8f"></circle>
+                <circle cx="94.25" cy="103.37" r="2.5" fill="#3d4a8f"></circle>
+                <circle cx="50.6" cy="96.7" r="2.5" fill="#3d4a8f"></circle>
+                <circle cx="32.3" cy="57.8" r="2.5" fill="#3d4a8f"></circle>
+              </g>
+              <text x="70" y="6" text-anchor="middle" font-size="9.5" fill="#17181c">Comms</text>
+              <text x="126" y="51" text-anchor="start" font-size="9.5" fill="#17181c">Solving</text>
+              <text x="122" y="131" text-anchor="middle" font-size="9.5" fill="#17181c">Behavior</text>
+              <text x="38" y="131" text-anchor="middle" font-size="9.5" fill="#17181c">Ownership</text>
+              <text x="14" y="51" text-anchor="end" font-size="9.5" fill="#17181c">Code</text>
+            </svg>
+          </div>
+        </div>
+        <button type="button" class="rh-replay" data-replay="3"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.2-5.9"></path><path d="M21 3v5h-5"></path></svg>{{ $how.replay_label }}</button>
+      </div>
+
+    </div>
+  </div>
+</section>

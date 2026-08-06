@@ -1,0 +1,11 @@
+{{ $hero := .Params.hero }}
+<section class="rh-hero">
+  <div class="rh-hero-inner">
+    <h1 class="rh-hero-title">{{ $hero.title_prefix }} <span class="rh-accent">{{ $hero.title_accent }}</span></h1>
+    <p class="rh-hero-sub">{{ $hero.subtitle }}</p>
+    <div class="rh-hero-ctas">
+      <button type="button" class="rh-btn rh-btn-solid rh-btn-lg">{{ $hero.primary_cta }}</button>
+      <button type="button" class="rh-btn rh-btn-outline rh-btn-lg">{{ $hero.secondary_cta }}</button>
+    </div>
+  </div>
+</section>

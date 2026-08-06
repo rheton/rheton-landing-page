@@ -1,0 +1,22 @@
+{{- $size := .size | default 22 -}}
+{{- $markSize := add $size 4 -}}
+{{- $fontSize := printf "%.1fpx" (mul $size 0.9) -}}
+<div class="rh-logo">
+  <svg viewBox="18 18 84 80" width="{{ $markSize }}" height="{{ $markSize }}" role="img" aria-label="rheton" class="rh-logo-mark">
+    <g transform="translate(24 24)" fill="currentColor">
+      <path transform="translate(0 23)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v6c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+      <path transform="translate(16 11)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v18c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+      <path transform="translate(32 -1)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v30c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+      <path transform="translate(48 7)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v22c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+      <path transform="translate(64 19)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v10c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+      <g fill-opacity="0.45">
+        <path transform="translate(0 39)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v4c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+        <path transform="translate(16 39)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v22c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+        <path transform="translate(32 39)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v28c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+        <path transform="translate(48 39)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v20c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+        <path transform="translate(64 39)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v12c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
+      </g>
+    </g>
+  </svg>
+  <span class="rh-logo-word" style="font-size:{{ $fontSize }}">rheton</span>
+</div>

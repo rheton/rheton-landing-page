@@ -1,0 +1,10 @@
+# Hugo build output
+/public/
+/resources/
+.hugo_build.lock
+
+# Claude Design handoff bundle (not part of the site source)
+/design-a-landing-page/
+
+# local-only Claude Code permissions
+.claude/settings.local.json

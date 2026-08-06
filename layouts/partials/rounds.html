@@ -1,0 +1,20 @@
+{{ $rounds := .Params.rounds }}
+<section id="rounds" class="rh-rounds">
+  <div class="rh-container">
+    <div class="rh-rounds-head">
+      <h2 class="rh-h2 rh-center">{{ $rounds.heading }}</h2>
+    </div>
+    <div class="rh-rounds-body">
+      <p class="rh-rounds-intro">{{ $rounds.intro }}</p>
+      <ul class="rh-rounds-list" id="roundsIcons">
+        {{ range $rounds.items }}
+        <li>
+          {{ partial "icon.html" (dict "name" .icon) }}
+          <span><span class="rh-bold">{{ .lead }}</span> {{ .body_html | safeHTML }}</span>
+        </li>
+        {{ end }}
+      </ul>
+      <p class="rh-rounds-footnote">{{ $rounds.footnote }}</p>
+    </div>
+  </div>
+</section>
