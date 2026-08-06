@@ -65,6 +65,20 @@ img, svg { display: block; }
 .rh-hero-sub { margin: 28px 0 0; font-size: 23px; line-height: 1.55; color: #17181c; max-width: 46ch; }
 .rh-hero-ctas { margin: 36px 0 0; display: flex; align-items: center; gap: 12px; }
 
+/* ---------- trusted by ---------- */
+.rh-trusted { padding: 56px 32px 64px; background: #ffffff; }
+.rh-trusted-heading { font-size: 19px; font-weight: 600; color: var(--color-fg-muted); }
+.rh-trusted-logos { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; }
+.rh-trusted-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--color-fg-subtle); transition: color .15s ease; }
+.rh-trusted-logo:hover { color: var(--color-fg); }
+.rh-trusted-logo svg { width: 28px; height: 28px; }
+.rh-trusted-logo-name { font-size: 21px; font-weight: 600; letter-spacing: -0.01em; }
+.rh-trusted-caption { font-size: 16px; color: var(--color-fg-subtle); }
+
+@media (max-width: 640px) {
+  .rh-trusted-logos { gap: 22px 28px; }
+}
+
 /* ---------- how it works ---------- */
 .rh-how { background: #ffffff; padding: 96px 32px 104px; }
 .rh-how-grid {
@@ -235,8 +249,24 @@ img, svg { display: block; }
   .rh-how-arrow { display: none !important; }
   .rh-tailored-grid { grid-template-columns: 1fr !important; }
   .rh-pricing-grid { grid-template-columns: 1fr !important; }
+  /* panels no longer need matched heights once stacked to one column,
+     and fixed 470px clips wrapped copy on narrow screens */
+  .rh-how-panel { height: auto; min-height: 420px; }
 }
 @media (max-width: 640px) {
   .rh-nav-links { display: none !important; }
   .rh-nav-toggle { display: inline-flex !important; }
+}
+@media (max-width: 480px) {
+  .rh-header-inner { padding: 0 16px; }
+  .rh-nav { gap: 12px; }
+  .rh-header-cta { gap: 6px; }
+  .rh-header-cta .rh-btn { padding: 0 11px; font-size: 13px; }
+  .rh-logo-word { display: none; }
+  .rh-hero { padding: 88px 20px 96px; }
+  .rh-hero-title { font-size: 38px; max-width: 100%; overflow-wrap: break-word; }
+  .rh-hero-sub { font-size: 18px; }
+  .rh-hero-ctas { flex-wrap: wrap; justify-content: center; }
+  .rh-h2 { font-size: 30px; overflow-wrap: break-word; }
+  .rh-container { padding: 0 20px; }
 }

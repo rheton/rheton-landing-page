@@ -1,0 +1,14 @@
+{{ $trusted := .Params.trusted_by }}
+{{ if $trusted.enabled }}
+<section class="rh-trusted">
+  <div class="rh-container rh-center-col">
+    <h2 class="rh-trusted-heading">{{ $trusted.heading }}</h2>
+    <div class="rh-trusted-logos">
+      {{ range $trusted.logos }}
+      <span class="rh-trusted-logo">{{ partial "icon.html" (dict "name" .icon) }}<span class="rh-trusted-logo-name">{{ .name }}</span></span>
+      {{ end }}
+      <span class="rh-trusted-caption">{{ $trusted.caption }}</span>
+    </div>
+  </div>
+</section>
+{{ end }}

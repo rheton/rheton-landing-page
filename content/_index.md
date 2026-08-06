@@ -28,6 +28,20 @@ hero:
   primary_cta: "Try a free mock interview"
   secondary_cta: "Sign in"
 
+trusted_by:
+  enabled: false
+  heading: "Trusted by engineers who landed offers at"
+  logos:
+    - icon: "google"
+      name: "Google"
+    - icon: "amazon"
+      name: "Amazon"
+    - icon: "tiktok"
+      name: "TikTok"
+    - icon: "meta"
+      name: "Meta"
+  caption: "…and many startups"
+
 how_it_works:
   heading: "How does it work?"
   replay_label: "Replay this stage"
