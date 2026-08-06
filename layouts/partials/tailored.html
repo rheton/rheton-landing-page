@@ -6,13 +6,13 @@
 
   <div class="rh-tailored-grid" id="tailoredGrid">
     {{ range $tailored.cards }}
-    <a href="#" class="rh-tailored-card">
+    <div class="rh-tailored-card">
       {{ partial "icon.html" (dict "name" .icon "class" "rh-tailored-icon") }}
       <div class="rh-tailored-copy">
         <span class="rh-tailored-title">{{ .title }}</span>
         <span class="rh-tailored-body">{{ .body_html | safeHTML }}</span>
       </div>
-    </a>
+    </div>
     {{ end }}
   </div>
 </section>
