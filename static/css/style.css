@@ -29,7 +29,8 @@ img, svg { display: block; }
 .rh-btn-block { width: 100%; height: 44px; font-size: 15px; }
 
 /* ---------- logo ---------- */
-.rh-logo { display: flex; align-items: center; gap: 8px; color: var(--color-fg); }
+.rh-logo { display: flex; align-items: center; gap: 8px; color: var(--color-fg); text-decoration: none; }
+.rh-logo:hover { color: var(--color-fg); text-decoration: none; }
 .rh-logo-word { font-family: var(--font-sans); font-weight: 500; letter-spacing: var(--tracking-tight); }
 
 /* ---------- header ---------- */

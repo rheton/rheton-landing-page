@@ -1,7 +1,7 @@
 {{- $size := .size | default 22 -}}
 {{- $markSize := add $size 4 -}}
 {{- $fontSize := printf "%.1fpx" (mul $size 0.9) -}}
-<div class="rh-logo">
+<a href="{{ "/" | relURL }}" class="rh-logo" aria-label="rheton home">
   <svg viewBox="22 21 76 80" width="{{ $markSize }}" height="{{ $markSize }}" role="img" aria-label="rheton" class="rh-logo-mark">
     <g transform="translate(24 24)" fill="currentColor">
       <path transform="translate(0 23)" d="M0 4c0-2.209 1.791-4 4-4s4 1.791 4 4v6c0 2.209-1.791 4-4 4s-4-1.791-4-4Z"></path>
@@ -19,4 +19,4 @@
     </g>
   </svg>
   <span class="rh-logo-word" style="font-size:{{ $fontSize }}">rheton</span>
-</div>
+</a>
