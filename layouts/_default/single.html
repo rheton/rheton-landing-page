@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" (dict "title" (printf "%s — %s" .Title site.Title)) }}
+<body>
+
+{{ $home := site.Home }}
+{{ partial "header.html" $home }}
+
+<main class="rh-legal">
+  <div class="rh-container rh-narrow">
+    <h1 class="rh-legal-title">{{ .Title }}</h1>
+    {{ if .Params.updated }}<p class="rh-legal-updated">Last updated {{ .Params.updated }}</p>{{ end }}
+    <div class="rh-legal-body">{{ .Content }}</div>
+  </div>
+</main>
+
+{{ partial "footer.html" $home }}
+
+<script src="{{ "js/main.js" | relURL }}" defer></script>
+</body>
+</html>

@@ -138,7 +138,7 @@ cta:
 footer:
   links:
     - label: "Privacy"
-      href: "#"
+      href: "/privacy/"
     - label: "Contact"
       href: "#"
   copyright: "2026 Rheton"
