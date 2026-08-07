@@ -13,9 +13,9 @@
 nav:
   links:
     - label: "How it works"
-      href: "#how"
+      href: "/#how"
     - label: "Pricing"
-      href: "#pricing"
+      href: "/#pricing"
     - label: "Blog"
       href: "/blog/"
   sign_in_label: "Sign in"

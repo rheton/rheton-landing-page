@@ -2,7 +2,7 @@
 {{ $pricingEnabled := .Params.pricing.enabled }}
 {{ $navLinks := slice }}
 {{ range $nav.links }}
-  {{ if or (ne .href "#pricing") $pricingEnabled }}
+  {{ if or (ne .href "/#pricing") $pricingEnabled }}
     {{ $navLinks = $navLinks | append . }}
   {{ end }}
 {{ end }}
