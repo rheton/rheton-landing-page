@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" (dict "title" (printf "%s — %s" .Title site.Title)) }}
+<body>
+
+{{ $home := site.Home }}
+{{ partial "header.html" $home }}
+
+<main class="rh-legal">
+  <div class="rh-container rh-narrow">
+    <h1 class="rh-legal-title">{{ .Title }}</h1>
+    {{ if .Content }}<div class="rh-legal-body">{{ .Content }}</div>{{ end }}
+
+    <div class="rh-blog-list">
+      {{ range .Pages.ByDate.Reverse }}
+      <a href="{{ .RelPermalink }}" class="rh-blog-item">
+        <span class="rh-blog-item-date">{{ .Date.Format "January 2, 2006" }}</span>
+        <span class="rh-blog-item-title">{{ .Title }}</span>
+        {{ if .Description }}<span class="rh-blog-item-desc">{{ .Description }}</span>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</main>
+
+{{ partial "footer.html" $home }}
+
+<script src="{{ "js/main.js" | relURL }}" defer></script>
+</body>
+</html>

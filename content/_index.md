@@ -16,8 +16,8 @@ nav:
       href: "#how"
     - label: "Pricing"
       href: "#pricing"
-    - label: "Blogs"
-      href: "#"
+    - label: "Blog"
+      href: "/blog/"
   sign_in_label: "Sign in"
   cta_label: "Sign up"
 
