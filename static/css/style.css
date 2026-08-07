@@ -257,8 +257,8 @@ img, svg { display: block; }
 .rh-legal-updated a { color: inherit; text-decoration: underline; }
 .rh-legal-updated a:hover { color: var(--color-fg); }
 
-.rh-blog-post-body { font-size: 19px; line-height: 1.7; }
-.rh-blog-post-body h2 { font-size: 27px; }
+.rh-blog-post-body { font-size: 16px; line-height: 1.65; }
+.rh-blog-post-body h2 { font-size: 22px; }
 
 .rh-blog-list { margin-top: 40px; display: flex; flex-direction: column; }
 .rh-blog-item { display: flex; flex-direction: column; gap: 4px; padding: 22px 0; border-top: 1px solid var(--color-border); }
