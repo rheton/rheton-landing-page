@@ -211,6 +211,10 @@ img, svg { display: block; }
 .rh-summary { padding: 104px 32px; }
 .rh-summary-body { font-size: 23px; line-height: 1.55; color: #17181c; text-align: left; }
 
+/* ---------- beta ---------- */
+.rh-beta { padding: 104px 32px; }
+.rh-beta-text { font-size: 23px; line-height: 1.55; color: #17181c; text-align: left; }
+
 /* ---------- pricing ---------- */
 .rh-pricing { padding: 104px 32px; }
 .rh-tabs { display: inline-flex; border: 1px solid var(--color-border); border-radius: 999px; padding: 3px; background: var(--color-surface); }

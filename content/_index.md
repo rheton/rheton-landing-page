@@ -16,6 +16,8 @@ nav:
       href: "/#how"
     - label: "Pricing"
       href: "/#pricing"
+    - label: "We're in beta"
+      href: "/#beta"
     - label: "Blog"
       href: "/blog/"
   sign_in_label: "Sign in"
@@ -83,6 +85,11 @@ session_summary:
   heading: "A summary you can act on"
   body: "Every interview ends with a plain-language summary: what you got right, where you struggled, and what to work on next. Re-run the same session later to track how you've improved."
   closing: "We want you to succeed."
+
+beta:
+  enabled: true
+  heading: "We're in beta"
+  body_html: "Free early access: <b>150 min of total free interview sessions</b> per week, no credit card required. We're still shipping fast and ironing out rough edges, so if something breaks or feels off, tell us. Pricing isn't live yet. While we're in beta, <b>it's on us.</b>"
 
 pricing:
   enabled: false

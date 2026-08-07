@@ -1,8 +1,9 @@
 {{ $nav := .Params.nav }}
 {{ $pricingEnabled := .Params.pricing.enabled }}
+{{ $betaEnabled := .Params.beta.enabled }}
 {{ $navLinks := slice }}
 {{ range $nav.links }}
-  {{ if or (ne .href "/#pricing") $pricingEnabled }}
+  {{ if and (or (ne .href "/#pricing") $pricingEnabled) (or (ne .href "/#beta") $betaEnabled) }}
     {{ $navLinks = $navLinks | append . }}
   {{ end }}
 {{ end }}

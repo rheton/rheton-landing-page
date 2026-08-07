@@ -1,0 +1,9 @@
+{{ $beta := .Params.beta }}
+{{ if $beta.enabled }}
+<section id="beta" class="rh-beta">
+  <div class="rh-container rh-narrow rh-center-col">
+    <h2 class="rh-h2">{{ $beta.heading }}</h2>
+    <p class="rh-beta-text">{{ $beta.body_html | safeHTML }}</p>
+  </div>
+</section>
+{{ end }}
