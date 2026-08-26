@@ -89,7 +89,7 @@ session_summary:
 beta:
   enabled: true
   heading: "We're in beta"
-  body_html: "Free early access: <b>150 min of total free interview sessions</b> per week, no credit card required. We're still shipping fast and ironing out rough edges, so if something breaks or feels off, tell us. Pricing isn't live yet. While we're in beta, <b>it's on us.</b>"
+  body_html: "Free early access: <b>100 min of total free interview sessions</b> per week, no credit card required. We're still shipping fast and ironing out rough edges, so if something breaks or feels off, tell us. Pricing isn't live yet. While we're in beta, <b>it's on us.</b>"
 
 pricing:
   enabled: false
