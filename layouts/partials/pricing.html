@@ -4,6 +4,7 @@
   <div class="rh-container">
     <div class="rh-center-col">
       <h2 class="rh-h2">{{ $pricing.heading }}</h2>
+      {{ with $pricing.subheading }}<p class="rh-pricing-sub">{{ . }}</p>{{ end }}
       {{/* Hidden until main.js loads the live prices: the toggle only means
            something once there are two prices to switch between. */}}
       <div class="rh-tabs" id="billingTabs" hidden>

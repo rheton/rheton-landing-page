@@ -222,6 +222,7 @@ img, svg { display: block; }
 .rh-tabs { display: inline-flex; border: 1px solid var(--color-border); border-radius: 999px; padding: 3px; background: var(--color-surface); }
 .rh-tab { border: none; cursor: pointer; border-radius: 999px; padding: 7px 16px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; transition: background-color .15s ease; white-space: nowrap; background: transparent; color: var(--color-fg-muted); }
 .rh-tab.is-active { background: #17181c; color: #ffffff; }
+.rh-pricing-sub { margin-top: -6px; font-size: 19px; line-height: 1.5; color: var(--color-fg-muted); }
 .rh-tabs[hidden] { display: none; }
 .rh-pricing-grid { margin: 48px auto 0; max-width: calc(var(--rh-plan-count, 3) * 380px); display: grid; grid-template-columns: repeat(var(--rh-plan-count, 3), 1fr); gap: 20px; align-items: stretch; }
 .rh-plan { display: flex; flex-direction: column; gap: 14px; height: 100%; padding: 26px; border-radius: 14px; background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }

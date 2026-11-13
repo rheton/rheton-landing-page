@@ -93,7 +93,8 @@ beta:
 
 pricing:
   enabled: true
-  heading: "Cheaper than one bad onsite"
+  heading: "Start free. Go Plus when it counts."
+  subheading: "Your next offer is worth more than this."
   # Plus's prices and each plan's minutes are fetched live through this
   # public endpoint (rheton's supabase/functions/plus-prices), so a price
   # change in the Stripe Dashboard or a new get_plan_minutes needs no edit
