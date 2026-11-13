@@ -118,7 +118,7 @@ img, svg { display: block; }
 .rh-replay:hover { text-decoration: underline; }
 
 /* engineering track: one full-width workspace, styled like the panels above */
-.rh-how-caption-wide { max-width: 760px; margin: 40px auto 0; text-align: center; }
+.rh-how-caption-wide { max-width: 720px; margin: 40px auto 0; text-align: left; }
 .rh-how-replay-row { display: flex; justify-content: center; margin-top: 14px; }
 .rh-vs {
   --rh-vs-gutter: 36px;
