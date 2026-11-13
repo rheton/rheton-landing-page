@@ -20,6 +20,17 @@ nav:
       href: "/#beta"
     - label: "Blog"
       href: "/blog/"
+  # Icon links beside the nav. `icon` names a brand in layouts/partials/icon.html.
+  social:
+    - icon: "discord"
+      label: "Discord"
+      href: "https://discord.gg/9eRqFKq2vY"
+    - icon: "linkedin"
+      label: "LinkedIn"
+      href: "https://www.linkedin.com/company/rheton"
+    - icon: "github"
+      label: "GitHub"
+      href: "https://github.com/rheton"
   sign_in_label: "Sign in"
   cta_label: "Sign up"
 
@@ -160,10 +171,27 @@ cta:
   button: "Try a free mock interview"
 
 footer:
-  links:
-    - label: "Privacy"
-      href: "/privacy/"
-    - label: "Contact"
-      href: "#"
-  copyright: "2026 Rheton"
+  # Link columns. The social icons reuse nav.social above.
+  columns:
+    - title: "Product"
+      links:
+        - label: "Home"
+          href: "/"
+        - label: "Pricing"
+          href: "/#pricing"
+    - title: "Company"
+      links:
+        - label: "About us"
+          href: "/about/"
+        - label: "Contact us"
+          href: "/contact/"
+        - label: "Brand guidelines"
+          href: "/brand/"
+    - title: "Legal"
+      links:
+        - label: "Privacy"
+          href: "/privacy/"
+        - label: "Terms and conditions"
+          href: "/terms/"
+  copyright: "© 2026 Rheton, LLC"
 ---

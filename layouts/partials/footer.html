@@ -1,10 +1,18 @@
 {{ $footer := .Params.footer }}
 <footer class="rh-footer">
   <div class="rh-footer-inner">
-    {{ partial "logo.html" (dict "size" 18) }}
-    <nav class="rh-footer-nav">
-      {{ range $footer.links }}<a href="{{ .href }}">{{ .label }}</a>{{ end }}
+    <nav class="rh-footer-cols" aria-label="Footer">
+      {{ range $footer.columns }}
+      <div class="rh-footer-col">
+        <div class="rh-footer-col-title">{{ .title }}</div>
+        {{ range .links }}<a href="{{ .href | relURL }}">{{ .label }}</a>{{ end }}
+      </div>
+      {{ end }}
     </nav>
-    <div class="rh-footer-copy">{{ $footer.copyright }}</div>
+    <div class="rh-footer-brand">
+      {{ partial "logo.html" (dict "size" 18) }}
+      {{ with .Params.nav.social }}<div class="rh-footer-social">{{ range . }}<a href="{{ .href }}" target="_blank" rel="noopener" aria-label="{{ .label }}" title="{{ .label }}">{{ partial "icon.html" (dict "name" .icon) }}</a>{{ end }}</div>{{ end }}
+      <div class="rh-footer-copy">{{ $footer.copyright }}</div>
+    </div>
   </div>
 </footer>

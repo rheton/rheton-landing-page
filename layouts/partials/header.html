@@ -14,11 +14,13 @@
       <div class="rh-nav-links" id="navLinks">
         {{ range $navLinks }}<a href="{{ .href }}">{{ .label }}</a>{{ end }}
       </div>
+      {{ with $nav.social }}<div class="rh-nav-social">{{ range . }}<a href="{{ .href }}" target="_blank" rel="noopener" aria-label="{{ .label }}" title="{{ .label }}">{{ partial "icon.html" (dict "name" .icon) }}</a>{{ end }}</div>{{ end }}
       <button type="button" class="rh-nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#17181c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
       <div class="rh-mobile-nav" id="mobileNavPanel">
         {{ range $navLinks }}<a href="{{ .href }}">{{ .label }}</a>{{ end }}
+        {{ with $nav.social }}<div class="rh-mobile-social">{{ range . }}<a href="{{ .href }}" target="_blank" rel="noopener" aria-label="{{ .label }}" title="{{ .label }}">{{ partial "icon.html" (dict "name" .icon) }}</a>{{ end }}</div>{{ end }}
       </div>
       <div class="rh-header-cta">
         <a href="https://app.rheton.io/login" class="rh-btn rh-btn-outline">{{ $nav.sign_in_label }}</a>
