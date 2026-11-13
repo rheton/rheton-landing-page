@@ -1,0 +1,20 @@
+{{ $latest := .Params.latest_posts }}
+{{ $posts := where site.RegularPages "Section" "blog" }}
+{{ if and $latest.enabled $posts }}
+<section id="latest" class="rh-latest">
+  <div class="rh-container rh-narrow">
+    <h2 class="rh-h2 rh-center">{{ $latest.heading }}</h2>
+    {{ with $latest.subheading }}<p class="rh-latest-sub">{{ . }}</p>{{ end }}
+    <div class="rh-blog-list">
+      {{ range first ($latest.count | default 3) $posts.ByDate.Reverse }}
+      <a href="{{ .RelPermalink }}" class="rh-blog-item">
+        <span class="rh-blog-item-date">{{ .Date.Format "January 2, 2006" }}</span>
+        <span class="rh-blog-item-title">{{ .Title }}</span>
+        {{ with .Description }}<span class="rh-blog-item-desc">{{ . }}</span>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+    <div class="rh-latest-more"><a href="{{ "blog/" | relURL }}">{{ $latest.link_label }} →</a></div>
+  </div>
+</section>
+{{ end }}

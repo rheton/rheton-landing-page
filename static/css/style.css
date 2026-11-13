@@ -382,6 +382,12 @@ img, svg { display: block; }
 .rh-blog-item-title { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; color: var(--color-fg); }
 .rh-blog-item-desc { font-size: 15px; line-height: 1.55; color: var(--color-fg-muted); }
 .rh-blog-item:hover .rh-blog-item-title { color: var(--color-accent-brand); }
+.rh-latest { padding: 104px 32px 24px; }
+.rh-latest-sub { margin: 14px 0 0; font-size: 23px; line-height: 1.55; text-align: center; color: var(--color-fg); }
+.rh-latest .rh-blog-list { margin-top: 40px; }
+.rh-latest-more { margin-top: 24px; }
+.rh-latest-more a { font-size: 15px; font-weight: 600; color: var(--color-fg); }
+.rh-latest-more a:hover { color: var(--color-accent-brand); text-decoration: none; }
 
 /* ---------- footer ---------- */
 .rh-footer { border-top: 1px solid var(--color-border); background: #ffffff; }

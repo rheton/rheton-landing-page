@@ -167,6 +167,13 @@ pricing:
       # Plus is bought from the Subscription page in the app, signed in.
       cta_href: "https://app.rheton.io/subscription"
 
+latest_posts:
+  enabled: true
+  heading: "Stay in the loop"
+  subheading: "The latest from our blog."
+  count: 3
+  link_label: "Go to the blog"
+
 cta:
   heading: "The best agent interviewer in the market. Period."
   button: "Try a free mock interview"
