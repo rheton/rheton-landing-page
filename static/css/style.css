@@ -125,7 +125,7 @@ img, svg { display: block; }
   margin-top: 28px; display: grid; grid-template-columns: 160px minmax(0, 1fr) 270px; grid-template-rows: minmax(0, 1fr); gap: 16px;
   height: 620px; padding: 16px; border: 1px solid #c7c8cd; border-radius: 12px; background: #ffffff; text-align: left;
 }
-.rh-vs-label { font-size: 10px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; color: #17181c; }
+.rh-vs-label { font-size: 11.5px; font-weight: 600; color: #17181c; }
 
 /* files */
 .rh-vs-explorer { min-width: 0; overflow: hidden; padding-top: 2px; }
@@ -158,7 +158,7 @@ img, svg { display: block; }
 .rh-py-fn { color: #17181c; font-weight: 600; }
 .rh-py-b { color: var(--color-fg); }
 .rh-vs-terminal { display: flex; flex-direction: column; min-height: 0; border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; }
-.rh-vs-tests { letter-spacing: 0; text-transform: none; font-size: 11px; }
+.rh-vs-tests { font-size: 11px; }
 .rh-vs-tests.is-fail { color: var(--color-destructive); }
 .rh-vs-tests.is-pass { color: var(--color-success); }
 .rh-vs-term {
@@ -199,7 +199,7 @@ img, svg { display: block; }
 /* setup panel */
 .rh-setup-field { display: flex; flex-direction: column; gap: 5px; }
 .rh-setup-field + .rh-setup-field { margin-top: 12px; }
-.rh-setup-label { font-size: 10px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; color: #17181c; }
+.rh-setup-label { font-size: 11.5px; font-weight: 600; color: #17181c; }
 .rh-setup-row { display: flex; align-items: center; gap: 7px; border: 1px solid var(--color-border-input); border-radius: 7px; padding: 7px 9px; min-width: 0; }
 .rh-setup-icon { flex-shrink: 0; color: var(--color-fg-muted); }
 .rh-setup-filename { flex: 1; min-width: 0; font-size: 11.5px; color: var(--color-fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -238,7 +238,7 @@ img, svg { display: block; }
 .rh-cursor { display: inline-block; width: 5px; height: 11px; margin-left: 1px; vertical-align: -1px; background: #17181c; opacity: 0; }
 .rh-cursor.is-typing.is-on { opacity: 1; }
 .rh-console { width: 100%; box-sizing: border-box; margin-top: 8px; border: 1px solid var(--color-border); border-radius: 8px; background: #ffffff; overflow: hidden; }
-.rh-console-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; border-bottom: 1px solid var(--color-border); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--color-fg-muted); }
+.rh-console-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; border-bottom: 1px solid var(--color-border); font-size: 11.5px; color: var(--color-fg-muted); }
 .rh-run-pill { display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 9px; border-radius: 6px; background: #46474d; color: #ffffff; font-size: 10.5px; font-weight: 500; transition: background .15s ease; }
 .rh-run-pill.is-running { background: #17181c; }
 .rh-console-out { padding: 6px 10px; font-family: var(--font-mono); font-size: 10.5px; line-height: 1.5; color: var(--color-fg); min-height: 15px; }
@@ -256,7 +256,7 @@ img, svg { display: block; }
 .rh-sum-items { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
 .rh-sum-item { display: flex; flex-direction: column; gap: 3px; opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
 .rh-sum-item.is-visible { opacity: 1; transform: translateY(0); }
-.rh-sum-item-label { font-size: 10px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: #17181c; }
+.rh-sum-item-label { font-size: 11.5px; font-weight: 600; color: #17181c; }
 .rh-sum-item-body { font-size: 12px; line-height: 1.5; color: #17181c; background: var(--gray-50); border: 1px solid var(--color-border); border-radius: 8px; padding: 8px 10px; }
 .rh-sum-radar-wrap { margin-top: auto; display: flex; flex-direction: column; align-items: center; padding-top: 8px; opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
 .rh-sum-radar-wrap.is-visible { opacity: 1; transform: translateY(0); }
