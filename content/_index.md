@@ -47,13 +47,26 @@ trusted_by:
 how_it_works:
   heading: "How does it work?"
   replay_label: "Replay this stage"
-  stages:
-    - lead: "Set up the session."
-      body: "Fully customizable and personalized, so it fits any company’s flow."
-    - lead: "Let the agent take over."
-      body: "It runs the interview, and it watches your code as you write it, not just what you say."
-    - lead: "Get the summary."
-      body: "The whole session, written up: what you did well and what needs work."
+  # One tab per track; the first is shown by default. Each key has its own
+  # panels in layouts/partials/how-<key>.html.
+  tracks:
+    - key: "engineering"
+      label: "Real-World Engineering"
+      badge: "New"
+      # One full-width workspace instead of three stages.
+      replay_label: "Replay"
+      lead: "Debug a real codebase, out loud."
+      body: "A small repo, a failing test suite, an editor and a terminal. The interviewer briefs you, nudges you when you're stuck, and asks why your fix works. Then it grades the diff you shipped."
+    - key: "algorithmic"
+      label: "Algorithmic"
+      badge: ""
+      stages:
+        - lead: "Set up the session."
+          body: "Fully customizable and personalized, so it fits any company’s flow."
+        - lead: "Let the agent take over."
+          body: "It runs the interview, and it watches your code as you write it, not just what you say."
+        - lead: "Get the summary."
+          body: "The whole session, written up: what you did well and what needs work."
 
 tailored:
   heading_line1: "Tailored to you,"

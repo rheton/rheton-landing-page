@@ -1,0 +1,53 @@
+{{/* "How does it work?" for the Real-World Engineering track: one
+     full-width, editor-style workspace acting out a debugging exercise from
+     the bank, feature-flag-env ("Checkout Kill Switch Ignored"). The code,
+     file names, test names and counts, and the fix are that problem's own.
+
+     main.js fills in the editor, terminal and transcript and runs the
+     script. The interviewer only reacts to what the candidate *says*: in
+     the real exercise it knows that they're typing, not what's on screen,
+     and only gets the diff and a fresh test run when the exercise ends.
+     Don't script it reacting to code it couldn't have seen. */}}
+{{ $t := .track }}
+
+<p class="rh-how-caption rh-how-caption-wide"><span class="rh-bold">{{ $t.lead }}</span> {{ $t.body }}</p>
+
+<div class="rh-vs" data-workspace aria-label="Animated example of a debugging exercise" role="img">
+  <div class="rh-vs-explorer">
+    <div class="rh-vs-label">feature-flag-env</div>
+    <div class="rh-vs-tree">
+      <div class="rh-vs-row is-dir" style="--d:0">config/</div>
+      <div class="rh-vs-row is-dir" style="--d:0">flags/</div>
+      <div class="rh-vs-row is-py" style="--d:1">__init__.py</div>
+      <div class="rh-vs-row is-py" style="--d:1">defaults.py</div>
+      <div class="rh-vs-row is-py" style="--d:1">registry.py</div>
+      <div class="rh-vs-row is-py" style="--d:1" data-file="flags/sources.py">sources.py</div>
+      <div class="rh-vs-row is-dir" style="--d:0">shop/</div>
+      <div class="rh-vs-row is-dir" style="--d:0">tests/</div>
+      <div class="rh-vs-row is-py" style="--d:1" data-file="tests/test_checkout.py">test_checkout.py</div>
+      <div class="rh-vs-row is-py" style="--d:1">test_flags.py</div>
+      <div class="rh-vs-row is-py" style="--d:0">conftest.py</div>
+    </div>
+  </div>
+
+  <div class="rh-vs-center">
+    <div class="rh-vs-editor-box">
+      <div class="rh-vs-tabs" data-role="tabs"></div>
+      <div class="rh-vs-editor"><div class="rh-vs-lines" data-role="lines"></div></div>
+    </div>
+    <div class="rh-vs-terminal">
+      <div class="rh-console-head"><span>Terminal</span><span class="rh-vs-tests" data-role="tests-status"></span></div>
+      <div class="rh-vs-term" data-role="term"></div>
+    </div>
+  </div>
+
+  <div class="rh-vs-interview">
+    <div class="rh-vs-iv-head">
+      <span class="rh-vs-label">Interviewer</span>
+      <span class="rh-vs-wave" data-role="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+    </div>
+    <div class="rh-vs-transcript" data-role="transcript"></div>
+  </div>
+</div>
+
+<div class="rh-how-replay-row">{{ partial "how-replay.html" (dict "stage" "all" "label" ($t.replay_label | default .replay)) }}</div>

@@ -1,0 +1,121 @@
+{{/* "How does it work?" for the Algorithmic track: a LeetCode-style
+     problem in the live code editor. Animated by main.js; elements it
+     drives are marked with data-reveal / data-role. */}}
+{{ $stages := .track.stages }}
+{{ $replay := .replay }}
+<div class="rh-how-grid">
+
+<div class="rh-how-col" data-stage="1">
+  {{ partial "how-caption.html" (index $stages 0) }}
+  <div class="rh-how-panel rh-panel-setup">
+    <div class="rh-setup-field">
+      <div class="rh-setup-label">Resume</div>
+      <div class="rh-setup-row">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rh-setup-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
+        <span class="rh-setup-filename">resume.pdf</span>
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rh-setup-check"><path d="M20 6L9 17l-5-5"></path></svg>
+      </div>
+    </div>
+
+    <div class="rh-setup-field">
+      <div class="rh-setup-label">Length</div>
+      <div class="rh-segmented">
+        <span>15</span><span>30</span><span>45</span><span class="is-active">60 min</span>
+      </div>
+    </div>
+
+    <div class="rh-setup-field">
+      <div class="rh-setup-label">Language</div>
+      <div class="rh-setup-select">Haskell<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></div>
+    </div>
+
+    <div class="rh-setup-field rh-setup-stages">
+      <div class="rh-setup-label">Stages</div>
+      <div class="rh-stage-row rh-stage-static"><span class="rh-stage-num">0</span>Introduction</div>
+      <div class="rh-stage-expand" data-reveal="stage2">
+        <div class="rh-stage-row"><span class="rh-stage-num">1</span>Coding exercise</div>
+        <div class="rh-segmented rh-segmented-sm">
+          <span class="is-active">Easy</span><span>Medium</span><span>Hard</span>
+        </div>
+        <div class="rh-tag-row">
+          <span class="rh-tag">Arrays</span><span class="rh-tag">Trees</span><span class="rh-tag">Hashing</span>
+        </div>
+      </div>
+      <div class="rh-stage-expand" data-reveal="stage3">
+        <div class="rh-stage-row"><span class="rh-stage-num">2</span>Behavioral questions</div>
+        <div class="rh-tag-row">
+          <span class="rh-tag">Conflict</span><span class="rh-tag">Ownership</span>
+        </div>
+      </div>
+      <div class="rh-add-stage" data-flash="adding">+ Add stage</div>
+    </div>
+  </div>
+  {{ partial "how-replay.html" (dict "stage" 1 "label" $replay) }}
+</div>
+
+{{ partial "how-arrow.html" 1 }}
+
+<div class="rh-how-col" data-stage="2">
+  {{ partial "how-caption.html" (index $stages 1) }}
+  <div class="rh-how-panel rh-panel-code">
+    <div class="rh-code-window">
+      <div class="rh-code-titlebar">solution.hs</div>
+      <div class="rh-code-body">
+        <pre class="rh-code-gutter">1
+2
+3
+4
+5
+6
+7
+8</pre><pre class="rh-code-text"><span data-role="code"></span><span class="rh-cursor" data-role="cursor"></span></pre>
+      </div>
+    </div>
+    <div class="rh-console">
+      <div class="rh-console-head">
+        <span>Console</span>
+        <span class="rh-run-pill" data-role="run"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l14 9-14 9V3z"></path></svg>Run</span>
+      </div>
+      <div class="rh-console-out" data-role="out"></div>
+    </div>
+    <div class="rh-chat">
+      <div class="rh-chat-bubble" data-reveal="bug1"><span class="rh-chat-dot"></span><p>There's a bug in your pivot comparison on line 5.</p></div>
+      <div class="rh-chat-bubble" data-reveal="bug2"><span class="rh-chat-dot"></span><p>The algorithm is correct.</p></div>
+      <div class="rh-chat-bubble" data-reveal="bug3"><span class="rh-chat-dot"></span><p>What's the time complexity if the array is already sorted?</p></div>
+    </div>
+  </div>
+  {{ partial "how-replay.html" (dict "stage" 2 "label" $replay) }}
+</div>
+
+{{ partial "how-arrow.html" 2 }}
+
+<div class="rh-how-col" data-stage="3">
+  {{ partial "how-caption.html" (index $stages 2) }}
+  <div class="rh-how-panel rh-panel-summary">
+    <div class="rh-sum-head" data-reveal="sum1">
+      <span class="rh-sum-check"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+      <span class="rh-sum-title">Interview completed</span>
+    </div>
+    <div class="rh-sum-items">
+      <div class="rh-sum-item" data-reveal="sum2">
+        <div class="rh-sum-item-label">Intro</div>
+        <div class="rh-sum-item-body">Clear on the round and the role; got straight to the problem.</div>
+      </div>
+      <div class="rh-sum-item" data-reveal="sum3">
+        <div class="rh-sum-item-label">Coding exercise</div>
+        <div class="rh-sum-item-body">Framed it well, caught the edge case; one unchecked complexity claim.</div>
+      </div>
+      <div class="rh-sum-item" data-reveal="sum4">
+        <div class="rh-sum-item-label">Behavioral questions</div>
+        <div class="rh-sum-item-body">Strong ownership example; light on how the conflict actually resolved.</div>
+      </div>
+    </div>
+    <div class="rh-sum-radar-wrap" data-reveal="sum5">
+      {{ partial "how-radar.html" (dict
+        "labels" (slice "Comms" "Solving" "Behavior" "Ownership" "Code")
+        "points" "70,24.9 114.45,55.55 94.25,103.37 50.6,96.7 32.3,57.8") }}
+    </div>
+  </div>
+  {{ partial "how-replay.html" (dict "stage" 3 "label" $replay) }}
+</div>
+</div>

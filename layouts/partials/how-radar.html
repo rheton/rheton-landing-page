@@ -1,0 +1,25 @@
+{{/* The summary panel's five-axis skill radar. `labels` are the axes,
+     clockwise from the top; `points` is the filled polygon, one x,y per
+     axis, on the grid below (center 70,70, radius 55). */}}
+{{ $l := .labels }}
+{{ $pts := split .points " " }}
+<svg viewBox="-50 -8 265 145" width="290" height="160">
+  <polygon points="70,15 122.3,53 102.3,114.5 37.7,114.5 17.7,53" fill="none" stroke="var(--color-border)" stroke-width="1"></polygon>
+  <polygon points="70,28.75 109.2,57.25 94.25,103.37 45.75,103.37 30.8,57.25" fill="none" stroke="var(--color-border)" stroke-width="1"></polygon>
+  <polygon points="70,42.5 96.15,61.5 86.17,92.25 53.83,92.25 43.85,61.5" fill="none" stroke="var(--color-border)" stroke-width="1"></polygon>
+  <polygon points="70,56.25 83.08,65.75 78.08,81.12 61.92,81.12 56.92,65.75" fill="none" stroke="var(--color-border)" stroke-width="1"></polygon>
+  <line x1="70" y1="70" x2="70" y2="15" stroke="var(--color-border)" stroke-width="1"></line>
+  <line x1="70" y1="70" x2="122.3" y2="53" stroke="var(--color-border)" stroke-width="1"></line>
+  <line x1="70" y1="70" x2="102.3" y2="114.5" stroke="var(--color-border)" stroke-width="1"></line>
+  <line x1="70" y1="70" x2="37.7" y2="114.5" stroke="var(--color-border)" stroke-width="1"></line>
+  <line x1="70" y1="70" x2="17.7" y2="53" stroke="var(--color-border)" stroke-width="1"></line>
+  <g class="rh-radar-fill" data-radar-fill>
+    <polygon points="{{ .points }}" fill="#3d4a8f" fill-opacity="0.22" stroke="#3d4a8f" stroke-width="1.5"></polygon>
+    {{ range $pts }}{{ $xy := split . "," }}<circle cx="{{ index $xy 0 }}" cy="{{ index $xy 1 }}" r="2.5" fill="#3d4a8f"></circle>{{ end }}
+  </g>
+  <text x="70" y="6" text-anchor="middle" font-size="9.5" fill="#17181c">{{ index $l 0 }}</text>
+  <text x="126" y="51" text-anchor="start" font-size="9.5" fill="#17181c">{{ index $l 1 }}</text>
+  <text x="122" y="131" text-anchor="middle" font-size="9.5" fill="#17181c">{{ index $l 2 }}</text>
+  <text x="38" y="131" text-anchor="middle" font-size="9.5" fill="#17181c">{{ index $l 3 }}</text>
+  <text x="14" y="51" text-anchor="end" font-size="9.5" fill="#17181c">{{ index $l 4 }}</text>
+</svg>
