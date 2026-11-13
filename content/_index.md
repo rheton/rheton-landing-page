@@ -57,19 +57,13 @@ trusted_by:
 
 how_it_works:
   heading: "How does it work?"
+  intro_html: "Practice on two tracks. <b>Algorithmic</b> is the classic coding round: solve a problem in a live editor, then talk through your code and its complexity. <b>Real-World Engineering</b> drops you into a small codebase with failing tests to debug, implement or extend, like the work you'd do on the job."
   replay_label: "Replay this stage"
   # One tab per track; the first is shown by default. Each key has its own
   # panels in layouts/partials/how-<key>.html.
   tracks:
-    - key: "engineering"
-      label: "Real-World Engineering"
-      badge: "New"
-      # One full-width workspace instead of three stages.
-      replay_label: "Replay"
-      lead: "Debug a real codebase, out loud."
-      body: "A small repo, a failing test suite, an editor and a terminal. The interviewer briefs you, nudges you when you're stuck, and asks why your fix works. Then it grades the diff you shipped."
     - key: "algorithmic"
-      label: "Algorithmic"
+      label: "Algorithmic (LeetCode-like)"
       badge: ""
       stages:
         - lead: "Set up the session."
@@ -78,6 +72,13 @@ how_it_works:
           body: "It runs the interview, and it watches your code as you write it, not just what you say."
         - lead: "Get the summary."
           body: "The whole session, written up: what you did well and what needs work."
+    - key: "engineering"
+      label: "Real-World Engineering"
+      badge: ""
+      # One full-width workspace instead of three stages.
+      replay_label: "Replay"
+      lead: "Debug a real codebase, out loud."
+      body: "A small repo, a failing test suite, an editor and a terminal. The interviewer briefs you, nudges you when you're stuck, and asks why your fix works. Then it grades the diff you shipped."
 
 tailored:
   heading_line1: "Tailored to you,"

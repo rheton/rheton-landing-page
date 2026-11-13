@@ -2,6 +2,7 @@
 <section id="how" class="rh-how">
   <div class="rh-container">
     <h2 class="rh-h2 rh-center">{{ $how.heading }}</h2>
+    {{ with $how.intro_html }}<p class="rh-how-intro">{{ . | safeHTML }}</p>{{ end }}
 
     {{/* One tab and one panel per track (how-<key>.html). The first track
          is shown by default; main.js switches between them and replays the
