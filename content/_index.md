@@ -171,7 +171,7 @@ cta:
   button: "Try a free mock interview"
 
 footer:
-  # Link columns. The social icons reuse nav.social above.
+  # Link columns.
   columns:
     - title: "Product"
       links:
