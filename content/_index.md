@@ -104,7 +104,6 @@ pricing:
   # {n} is replaced with the 3-month plan's discount vs. paying monthly.
   savings_label: "save {n}%"
   minutes_label: "{n} practice minutes a month"
-  footnote: "Have a promo code? Redeem it on the Subscription page in the app. Its minutes stack on top of either plan."
   # The feature lists mirror FREE_FEATURES / PLUS_FEATURES on the app's
   # Subscription page (frontend/src/pages/Subscription.tsx). Keep them in
   # sync by hand: the Plus-only items are enforced by the app, not here.
@@ -115,7 +114,7 @@ pricing:
       price: "$0"
       unit: "/ month"
       featured: false
-      blurb: "The full interview, with problems and questions picked at random."
+      blurb_html: "The full interview, with problems and questions picked at random. <b>No credit card required.</b>"
       items:
         - "Coding, engineering, technical and behavioral stages"
         - "Random problems and questions"
@@ -138,7 +137,7 @@ pricing:
         - "Sample answers for technical questions"
         - "Re-run past sessions"
         - "Resume questions"
-      cta: "Upgrade to Plus"
+      cta: "Subscribe to Plus"
       # Plus is bought from the Subscription page in the app, signed in.
       cta_href: "https://app.rheton.io/subscription"
 

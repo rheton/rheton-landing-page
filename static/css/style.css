@@ -234,7 +234,7 @@ img, svg { display: block; }
 .rh-plan-unit { font-size: 13px; color: var(--color-fg-subtle); }
 .rh-plan-blurb { font-size: 15px; line-height: 1.55; color: var(--color-fg-muted); }
 .rh-plan-items { border-top: 1px solid var(--color-border); padding-top: 16px; display: flex; flex-direction: column; gap: 10px; }
-.rh-plan-item { position: relative; padding-left: 14px; font-size: 15px; line-height: 1.5; color: var(--color-fg-muted); }
+.rh-plan-item { position: relative; padding-left: 14px; font-size: 15px; line-height: 1.5; color: var(--color-fg); }
 .rh-plan-item::before { content: ""; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; border-radius: 999px; background: #17181c; }
 .rh-plan-footer { margin-top: auto; padding-top: 22px; }
 .rh-plan-price[data-live-price] { min-height: 50px; } /* same height as a price, for the no-price fallback */

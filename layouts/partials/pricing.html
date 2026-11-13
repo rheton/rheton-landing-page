@@ -23,7 +23,7 @@
           <span class="rh-plan-amount">{{ .price }}</span>
           <span class="rh-plan-unit">{{ .unit }}</span>
         </div>
-        <p class="rh-plan-blurb">{{ .blurb }}</p>
+        <p class="rh-plan-blurb">{{ with .blurb_html }}{{ . | safeHTML }}{{ else }}{{ .blurb }}{{ end }}</p>
         <div class="rh-plan-items">
           {{ if .minutes }}<div class="rh-plan-item" data-minutes-key="{{ .key }}">{{ replace $pricing.minutes_label "{n}" (string .minutes) }}</div>{{ end }}
           {{ range .items }}<div class="rh-plan-item">{{ . }}</div>{{ end }}
