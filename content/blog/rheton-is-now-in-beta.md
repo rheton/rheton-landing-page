@@ -28,6 +28,6 @@ At the end, you get a written summary: what you did well, where you struggled, w
 
 ## About the beta
 
-There's no pricing yet. Early access is free, full stop. In exchange, we'd genuinely like your feedback: what felt real, what broke, what you'd want next. That's what a beta is for. Please send to **feedback@rheton.io** for any feedback, thoughts, complains, or anything you want to comment to make Rheton better.
+There's no pricing yet. Early access is free, full stop. In exchange, we'd genuinely like your feedback: what felt real, what broke, what you'd want next. That's what a beta is for. Please send to **support@rheton.io** for any feedback, thoughts, complains, or anything you want to comment to make Rheton better.
 
 [Try a free mock interview](/) and tell us how it goes.

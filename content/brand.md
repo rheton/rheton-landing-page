@@ -7,4 +7,4 @@ title: "Brand guidelines"
 
 Our brand guidelines, including logo files and usage rules, are coming soon.
 
-If you need Rheton's logo or brand assets before then, contact us at **feedback@rheton.io**.
+If you need Rheton's logo or brand assets before then, contact us at **hello@rheton.io**.

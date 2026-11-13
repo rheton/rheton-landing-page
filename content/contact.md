@@ -2,15 +2,27 @@
 title: "Contact us"
 ---
 
-We'd love to hear from you. Pick whichever channel suits you best.
+We'd love to hear from you. Pick whichever address fits best.
 
-## Feedback and support
+## Support
 
-Questions, bug reports, ideas or anything that felt off in an interview: **feedback@rheton.io**.
+Questions about your account or billing, bug reports, ideas, or anything that felt off in an interview: **support@rheton.io**.
+
+## Partnerships and press
+
+Partnerships, press, brand assets, or just saying hello: **hello@rheton.io**.
 
 ## Privacy
 
-Questions about your data or requests to access or delete it: **privacy@rheton.io**. See our [Privacy Policy](/privacy/) for details.
+Questions about your data, or requests to access or delete it: **privacy@rheton.io**. See our [Privacy Policy](/privacy/) for details.
+
+## Security
+
+Found a vulnerability? Please report it to **security@rheton.io** so we can fix it before it's disclosed.
+
+## Legal
+
+Legal notices and questions about our [Terms and Conditions](/terms/): **legal@rheton.io**.
 
 ## Community
 

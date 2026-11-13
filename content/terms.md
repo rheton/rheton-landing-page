@@ -7,4 +7,4 @@ title: "Terms and Conditions"
 
 Our terms and conditions are being finalized and will be published here soon.
 
-In the meantime, if you have questions about using Rheton, contact us at **feedback@rheton.io**.
+In the meantime, questions about using Rheton can go to **support@rheton.io**, and legal notices to **legal@rheton.io**.
