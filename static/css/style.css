@@ -351,6 +351,23 @@ img, svg { display: block; }
 .rh-legal-body a { color: var(--color-fg); text-decoration: underline; }
 .rh-legal-body a:hover { color: var(--color-accent-brand); }
 .rh-legal-body strong { font-weight: 600; }
+/* brand guidelines */
+.rh-brand-logos { margin: 8px 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.rh-brand-logo { margin: 0; }
+.rh-brand-logo-tile { height: 120px; display: flex; align-items: center; justify-content: center; padding: 24px; border: 1px solid var(--color-border); border-radius: 12px; background: #ffffff; }
+.rh-brand-logo.is-dark .rh-brand-logo-tile { background: var(--gray-100); }
+.rh-brand-logo-tile img { max-width: 100%; max-height: 64px; }
+.rh-brand-logo figcaption { margin-top: 10px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; line-height: 1.45; }
+.rh-brand-logo figcaption span { color: var(--color-fg-muted); }
+.rh-swatches { margin: 8px 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.rh-swatch { display: flex; align-items: center; gap: 12px; padding: 10px; border: 1px solid var(--color-border); border-radius: 12px; }
+.rh-swatch-chip { flex-shrink: 0; width: 48px; height: 48px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(23, 24, 28, .1); }
+.rh-swatch-text { display: flex; flex-direction: column; gap: 1px; font-size: 14px; line-height: 1.4; }
+.rh-swatch-text code { font-family: var(--font-mono); font-size: 12.5px; color: var(--color-fg-muted); }
+.rh-swatch-text span { font-size: 13px; color: var(--color-fg-muted); }
+.rh-legal-body table { width: 100%; margin: 0 0 16px; border-collapse: collapse; font-size: 15px; }
+.rh-legal-body th, .rh-legal-body td { padding: 8px 10px; border-bottom: 1px solid var(--color-border); text-align: left; vertical-align: top; }
+.rh-legal-body th { font-weight: 600; }
 .rh-legal-updated a { color: inherit; text-decoration: underline; }
 .rh-legal-updated a:hover { color: var(--color-fg); }
 

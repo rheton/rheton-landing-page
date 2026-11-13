@@ -1,0 +1,7 @@
+{{- /* A logo preview tile with a download link.
+       Usage: {{< brand-logo src="img/rheton-logo-text.png" name="Logo" note="Horizontal, black" dark="false" >}} */ -}}
+{{- $src := .Get "src" -}}
+<figure class="rh-brand-logo{{ if eq (.Get "dark") "true" }} is-dark{{ end }}">
+  <div class="rh-brand-logo-tile"><img src="{{ $src | relURL }}" alt="{{ .Get "name" }}"></div>
+  <figcaption><b>{{ .Get "name" }}</b><span>{{ .Get "note" }}</span><a href="{{ $src | relURL }}" download>Download</a></figcaption>
+</figure>

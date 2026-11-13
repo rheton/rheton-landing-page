@@ -1,0 +1,6 @@
+{{- /* Usage: {{< swatch name="Ink" hex="#17181C" use="Text, logo" >}} */ -}}
+{{- $hex := .Get "hex" -}}
+<div class="rh-swatch">
+  <span class="rh-swatch-chip" style="background: {{ $hex | safeCSS }}"></span>
+  <span class="rh-swatch-text"><b>{{ .Get "name" }}</b><code>{{ $hex }}</code><span>{{ .Get "use" }}</span></span>
+</div>
