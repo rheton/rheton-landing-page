@@ -2,7 +2,11 @@
 title: "Contact us"
 ---
 
-We'd love to hear from you. Pick whichever address fits best.
+We'd love to hear from you. Pick whichever channel fits best.
+
+## Discord (preferred)
+
+The fastest way to reach us is our [Discord community](https://discord.gg/9eRqFKq2vY). It's where we're most likely to get back to you quickly. Come for support and feedback, and stay for the job hunting resources shared by the team and other members.
 
 ## Support
 
@@ -24,6 +28,6 @@ Found a vulnerability? Please report it to **security@rheton.io** so we can fix 
 
 Legal notices and questions about our [Terms and Conditions](/terms/): **legal@rheton.io**.
 
-## Community
+## Follow us
 
-Join the conversation on [Discord](https://discord.gg/9eRqFKq2vY), and follow us on [LinkedIn](https://www.linkedin.com/company/rheton) and [GitHub](https://github.com/rheton).
+Follow Rheton on [LinkedIn](https://www.linkedin.com/company/rheton) and [GitHub](https://github.com/rheton).

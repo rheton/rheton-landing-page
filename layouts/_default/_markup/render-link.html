@@ -1,0 +1,7 @@
+{{- /* Markdown links. Links off rheton.io (Discord, LinkedIn, GitHub, ...)
+       open in a new tab; links within the site and the app
+       (app.rheton.io), and mailto: links, stay in this one. */ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $external := and (in (slice "http" "https") $u.Scheme) (not (or (eq $u.Host "rheton.io") (strings.HasSuffix $u.Host ".rheton.io"))) -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- /* no trailing newline */ -}}
