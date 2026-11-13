@@ -26,24 +26,76 @@
     });
   }
 
-  /* ---------------- pricing toggle ---------------- */
+  /* ---------------- pricing: live Plus prices and plan minutes ---------------- */
+  // Plus's prices (live from Stripe) and each plan's minutes come from
+  // rheton's public plus-prices function. Until they load (or if they
+  // can't), the cards keep the fallback written into the page, and the
+  // billing toggle stays hidden.
+  var pricingSection = document.getElementById("pricing");
   var billingTabs = document.getElementById("billingTabs");
-  if (billingTabs) {
-    var proAmount = document.getElementById("proAmount");
-    var proUnit = document.getElementById("proUnit");
-    var basePrice = parseFloat(proAmount.dataset.basePrice) || 0;
-    var annualDiscount = parseFloat(billingTabs.closest("[data-annual-discount]").dataset.annualDiscount) || 0;
-    var monthlyUnit = proUnit.dataset.monthlyUnit || "";
-    var annualUnit = proUnit.dataset.annualUnit || monthlyUnit;
-    billingTabs.querySelectorAll(".rh-tab").forEach(function (tab) {
-      tab.addEventListener("click", function () {
-        billingTabs.querySelectorAll(".rh-tab").forEach(function (t) { t.classList.remove("is-active"); });
-        tab.classList.add("is-active");
-        var annual = tab.dataset.billing === "annual";
-        proAmount.textContent = "$" + (annual ? Math.round(basePrice * (1 - annualDiscount)) : basePrice);
-        proUnit.textContent = annual ? annualUnit : monthlyUnit;
-      });
-    });
+  var priceEl = pricingSection && pricingSection.querySelector("[data-live-price]");
+  if (priceEl && billingTabs && window.fetch) {
+    var amountEl = priceEl.querySelector(".rh-plan-amount");
+    var unitEl = priceEl.querySelector(".rh-plan-unit");
+    // Same unit wording as the app's Subscription page.
+    var UNITS = { month: "/ month", quarter: "/ 3 months" };
+
+    // Same formatting as the app's Budget page (formatPrice in
+    // frontend/src/lib/billing.ts): whole amounts drop the cents.
+    function formatPrice(plan) {
+      return new Intl.NumberFormat(undefined, {
+        style: "currency",
+        currency: plan.currency.toUpperCase(),
+        minimumFractionDigits: plan.unit_amount % 100 === 0 ? 0 : 2,
+      }).format(plan.unit_amount / 100);
+    }
+
+    priceEl.classList.add("is-loading");
+    fetch(pricingSection.dataset.pricesUrl)
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        if (data.minutes) {
+          pricingSection.querySelectorAll("[data-minutes-key]").forEach(function (el) {
+            var n = data.minutes[el.dataset.minutesKey];
+            if (typeof n === "number") el.textContent = pricingSection.dataset.minutesLabel.replace("{n}", n);
+          });
+        }
+
+        var plans = {};
+        (data.plans || []).forEach(function (p) {
+          if (p.unit_amount !== null && UNITS[p.interval]) plans[p.interval] = p;
+        });
+        if (!plans.month) throw new Error("no monthly price");
+
+        function show(interval) {
+          var plan = plans[interval];
+          amountEl.textContent = formatPrice(plan);
+          unitEl.textContent = UNITS[interval];
+          billingTabs.querySelectorAll(".rh-tab").forEach(function (t) {
+            t.classList.toggle("is-active", t.dataset.interval === interval);
+          });
+        }
+
+        if (plans.quarter) {
+          var quarterTab = billingTabs.querySelector('[data-interval="quarter"]');
+          var savings = Math.round((1 - plans.quarter.unit_amount / (plans.month.unit_amount * 3)) * 100);
+          if (savings > 0) {
+            quarterTab.textContent = quarterTab.dataset.label + " (" +
+              quarterTab.dataset.savingsLabel.replace("{n}", savings) + ")";
+          }
+          billingTabs.querySelectorAll(".rh-tab").forEach(function (tab) {
+            tab.addEventListener("click", function () { show(tab.dataset.interval); });
+          });
+          billingTabs.hidden = false;
+        }
+        // Like the Subscription page, lead with the 3-month plan.
+        show(plans.quarter ? "quarter" : "month");
+      })
+      .catch(function () { /* keep the fallback */ })
+      .then(function () { priceEl.classList.remove("is-loading"); });
   }
 
   /* ---------------- cursor blink (code panel) ---------------- */

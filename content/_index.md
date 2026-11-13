@@ -87,56 +87,60 @@ session_summary:
   closing: "We want you to succeed."
 
 beta:
-  enabled: true
+  enabled: false
   heading: "We're in beta"
   body_html: "Free early access: <b>100 min of total free interview sessions</b> per week, no credit card required. We're still shipping fast and ironing out rough edges, so if something breaks or feels off, tell us. Pricing isn't live yet. While we're in beta, <b>it's on us.</b>"
 
 pricing:
-  enabled: false
+  enabled: true
   heading: "Cheaper than one bad onsite"
+  # Plus's prices and each plan's minutes are fetched live through this
+  # public endpoint (rheton's supabase/functions/plus-prices), so a price
+  # change in the Stripe Dashboard or a new get_plan_minutes needs no edit
+  # here. The `minutes` below are only the fallback if it can't be reached.
+  prices_url: "https://ueczlyounsnssvuauump.supabase.co/functions/v1/plus-prices"
   monthly_label: "Monthly"
-  annual_label: "Annual, save 20%"
-  annual_discount: 0.2
+  quarterly_label: "3 months"
+  # {n} is replaced with the 3-month plan's discount vs. paying monthly.
+  savings_label: "save {n}%"
+  minutes_label: "{n} practice minutes a month"
+  footnote: "Have a promo code? Redeem it on the Subscription page in the app. Its minutes stack on top of either plan."
+  # The feature lists mirror FREE_FEATURES / PLUS_FEATURES on the app's
+  # Subscription page (frontend/src/pages/Subscription.tsx). Keep them in
+  # sync by hand: the Plus-only items are enforced by the app, not here.
   plans:
     - name: "Free"
+      key: "free"
+      minutes: 70
       price: "$0"
-      unit: ""
+      unit: "/ month"
       featured: false
-      badge: ""
-      blurb: "One full interview, all rounds. See if it holds up."
+      blurb: "The full interview, with problems and questions picked at random."
       items:
-        - "1 interview"
-        - "Any round"
-        - "Full written summary"
-        - "Saved for 30 days"
+        - "Coding, engineering, technical and behavioral stages"
+        - "Random problems and questions"
+        - "Interview summary and skill charts"
       cta: "Start free"
-    - name: "Pro"
-      price: "$29"
-      base_price: 29
-      unit: "/mo"
-      annual_unit: "/mo, billed annually"
+      cta_href: "https://app.rheton.io/signup"
+    - name: "Plus"
+      key: "plus"
+      minutes: 300
+      # The price row is filled in by main.js. If it can't load, the card
+      # shows this line instead of a price.
+      live: true
+      price: ""
+      unit: "Billed monthly or every 3 months"
       featured: true
-      badge: "Most picked"
-      blurb: "For an active search. Interview as often as you need to."
+      blurb: "Choose exactly what you practice, and practice more of it."
       items:
-        - "Unlimited interviews"
-        - "Job-description and resume targeting"
-        - "Rounds that remember the last one"
-        - "Session history and comparison"
-        - "Export summaries"
-      cta: "Start free, then Pro"
-    - name: "Teams"
-      price: "Custom"
-      unit: ""
-      featured: false
-      badge: ""
-      blurb: "For bootcamps and university career centers."
-      items:
-        - "Seats for a whole cohort"
-        - "Shared question sets per employer"
-        - "Cohort progress view"
-        - "SSO and invoicing"
-      cta: "Talk to us"
+        - "Everything in Free"
+        - "Choose any problem or question"
+        - "Sample answers for technical questions"
+        - "Re-run past sessions"
+        - "Resume questions"
+      cta: "Upgrade to Plus"
+      # Plus is bought from the Subscription page in the app, signed in.
+      cta_href: "https://app.rheton.io/subscription"
 
 cta:
   heading: "The best agent interviewer in the market. Period."

@@ -222,7 +222,8 @@ img, svg { display: block; }
 .rh-tabs { display: inline-flex; border: 1px solid var(--color-border); border-radius: 999px; padding: 3px; background: var(--color-surface); }
 .rh-tab { border: none; cursor: pointer; border-radius: 999px; padding: 7px 16px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; transition: background-color .15s ease; white-space: nowrap; background: transparent; color: var(--color-fg-muted); }
 .rh-tab.is-active { background: #17181c; color: #ffffff; }
-.rh-pricing-grid { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.rh-tabs[hidden] { display: none; }
+.rh-pricing-grid { margin: 48px auto 0; max-width: calc(var(--rh-plan-count, 3) * 380px); display: grid; grid-template-columns: repeat(var(--rh-plan-count, 3), 1fr); gap: 20px; align-items: stretch; }
 .rh-plan { display: flex; flex-direction: column; gap: 14px; height: 100%; padding: 26px; border-radius: 14px; background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
 .rh-plan.is-featured { background: #fafafa; border: 1px solid #17181c; }
 .rh-plan-head { display: flex; align-items: center; gap: 8px; }
@@ -236,6 +237,11 @@ img, svg { display: block; }
 .rh-plan-item { position: relative; padding-left: 14px; font-size: 15px; line-height: 1.5; color: var(--color-fg-muted); }
 .rh-plan-item::before { content: ""; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; border-radius: 999px; background: #17181c; }
 .rh-plan-footer { margin-top: auto; padding-top: 22px; }
+.rh-plan-price[data-live-price] { min-height: 50px; } /* same height as a price, for the no-price fallback */
+.rh-plan-price.is-loading { visibility: hidden; }
+.rh-plan-amount:empty { display: none; }
+.rh-plan-price:has(.rh-plan-amount:empty) { align-items: center; }
+.rh-pricing-footnote { margin: 28px auto 0; max-width: 560px; text-align: center; font-size: 14px; line-height: 1.55; color: var(--color-fg-subtle); }
 
 /* ---------- closing cta ---------- */
 .rh-cta { background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%); padding: 104px 32px 120px; }

@@ -1,36 +1,41 @@
 {{ $pricing := .Params.pricing }}
 {{ if $pricing.enabled }}
-<section id="pricing" class="rh-pricing" data-annual-discount="{{ $pricing.annual_discount }}">
+<section id="pricing" class="rh-pricing" data-prices-url="{{ $pricing.prices_url }}" data-minutes-label="{{ $pricing.minutes_label }}">
   <div class="rh-container">
     <div class="rh-center-col">
       <h2 class="rh-h2">{{ $pricing.heading }}</h2>
-      <div class="rh-tabs" id="billingTabs">
-        <button type="button" class="rh-tab is-active" data-billing="monthly">{{ $pricing.monthly_label }}</button>
-        <button type="button" class="rh-tab" data-billing="annual">{{ $pricing.annual_label }}</button>
+      {{/* Hidden until main.js loads the live prices: the toggle only means
+           something once there are two prices to switch between. */}}
+      <div class="rh-tabs" id="billingTabs" hidden>
+        <button type="button" class="rh-tab" data-interval="month">{{ $pricing.monthly_label }}</button>
+        <button type="button" class="rh-tab is-active" data-interval="quarter" data-label="{{ $pricing.quarterly_label }}" data-savings-label="{{ $pricing.savings_label }}">{{ $pricing.quarterly_label }}</button>
       </div>
     </div>
 
-    <div class="rh-pricing-grid" id="pricingGrid">
+    <div class="rh-pricing-grid" style="--rh-plan-count: {{ len $pricing.plans }}">
       {{ range $pricing.plans }}
       <div class="rh-plan{{ if .featured }} is-featured{{ end }}">
         <div class="rh-plan-head">
           <div class="rh-plan-name">{{ .name }}</div>
-          {{ if .badge }}<span class="rh-plan-badge">{{ .badge }}</span>{{ end }}
+          {{ with .badge }}<span class="rh-plan-badge">{{ . }}</span>{{ end }}
         </div>
-        <div class="rh-plan-price">
-          <span class="rh-plan-amount"{{ if .featured }} id="proAmount" data-base-price="{{ .base_price }}"{{ end }}>{{ .price }}</span>
-          {{ if .unit }}<span class="rh-plan-unit"{{ if .featured }} id="proUnit" data-monthly-unit="{{ .unit }}" data-annual-unit="{{ .annual_unit }}"{{ end }}>{{ .unit }}</span>{{ end }}
+        <div class="rh-plan-price"{{ if .live }} data-live-price{{ end }}>
+          <span class="rh-plan-amount">{{ .price }}</span>
+          <span class="rh-plan-unit">{{ .unit }}</span>
         </div>
         <p class="rh-plan-blurb">{{ .blurb }}</p>
         <div class="rh-plan-items">
+          {{ if .minutes }}<div class="rh-plan-item" data-minutes-key="{{ .key }}">{{ replace $pricing.minutes_label "{n}" (string .minutes) }}</div>{{ end }}
           {{ range .items }}<div class="rh-plan-item">{{ . }}</div>{{ end }}
         </div>
         <div class="rh-plan-footer">
-          <button type="button" class="rh-btn {{ if .featured }}rh-btn-solid{{ else }}rh-btn-outline{{ end }} rh-btn-block">{{ .cta }}</button>
+          <a href="{{ .cta_href }}" class="rh-btn {{ if .featured }}rh-btn-solid{{ else }}rh-btn-outline{{ end }} rh-btn-block">{{ .cta }}</a>
         </div>
       </div>
       {{ end }}
     </div>
+
+    {{ with $pricing.footnote }}<p class="rh-pricing-footnote">{{ . }}</p>{{ end }}
   </div>
 </section>
 {{ end }}
