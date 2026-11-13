@@ -1,6 +1,6 @@
 ---
 title: "Introducing the Real-World Engineering track"
-date: 2026-11-13
+date: 2026-11-13T12:00:00-08:00
 description: "Rheton now has a second track: debug, implement or extend a real codebase with a failing test suite while an AI interviewer talks you through it."
 ---
 
