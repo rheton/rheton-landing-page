@@ -91,8 +91,8 @@
           });
           billingTabs.hidden = false;
         }
-        // Like the Subscription page, lead with the 3-month plan.
-        show(plans.quarter ? "quarter" : "month");
+        // Lead with the monthly price.
+        show("month");
       })
       .catch(function () { /* keep the fallback */ })
       .then(function () { priceEl.classList.remove("is-loading"); });
